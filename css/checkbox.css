@@ -1,0 +1,79 @@
+.checkbox-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.checkbox-group:last-child {
+  border-bottom: none;
+}
+
+.checkbox-group input[type='checkbox'] {
+  margin-right: 10px;
+}
+
+.checkbox-group .action {
+  cursor: pointer;
+}
+
+.admin-switch {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.admin-switch input[type='checkbox'] {
+  display: none;
+}
+
+.admin-switch label {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.admin-switch label::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.admin-switch input[type='checkbox']:checked + label::before {
+  transform: translateX(25px);
+}
+
+.progress-bar {
+  background-color: #ccc;
+  height: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background-color: #7e4483;
+  height: 100%;
+  width: 100%;
+  transition: width 0.3s ease;
+}
+
+.progress-bar p {
+  text-align: center;
+  margin: 0;
+  font-size: 12px;
+  line-height: 10px;
+  position: relative;
+  top: -15px;
+}

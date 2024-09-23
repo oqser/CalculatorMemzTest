@@ -1,0 +1,31 @@
+.header {
+  background-color: #7e4483;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header ul {
+  display: flex;
+}
+
+.header li {
+  display: flex;
+  padding: 10px;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+}
+
+.header a:hover {
+  text-decoration: underline;
+}
+
+.header ul {
+  padding-left: 0px;
+}
