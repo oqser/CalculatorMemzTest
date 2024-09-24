@@ -60,15 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function createSubElement(label, id) {
-        const div = document.createElement('div')
-        div.innerHTML = `
+        // Для блока "user"
+        const divUser = document.createElement('div')
+        divUser.innerHTML = `
+            <input type="checkbox" id="${id}" name="breed" value="${label}">
+            <label for="${id}">${label}</label>
+        `
+        subCheckboxesUser.appendChild(divUser)
+
+        // Для блока "admin"
+        const divAdmin = document.createElement('div')
+        divAdmin.innerHTML = `
             <label id="${id}">${label}</label>
             <button class="delete-button" data-id="${id}">Удалить</button>
         `
-        subCheckboxesUser.appendChild(div)
-        subCheckboxesAdmin.appendChild(div.cloneNode(true))
+        subCheckboxesAdmin.appendChild(divAdmin)
     }
-
     function updateLocalStorage(subElementsData) {
         localStorage.setItem('subElements', JSON.stringify(subElementsData))
     }
