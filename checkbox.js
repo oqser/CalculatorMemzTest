@@ -13,24 +13,40 @@ adminSwitch.addEventListener('change', () => {
 })
 
 const groupCheckbox = document.getElementById('group-breed')
-const subCheckboxes = document.querySelectorAll(
-    '#user .sub-checkboxes input[type="checkbox"]'
-)
 const toggleButton = document.querySelector('.toggle-button')
 const subCheckboxesContainer = document.querySelector('.sub-checkboxes')
 
-groupCheckbox.addEventListener('change', () => {
-    subCheckboxes.forEach((checkbox) => {
-        checkbox.checked = groupCheckbox.checked
-    })
+const observer = new MutationObserver((mutations) => {
+    updateSubCheckboxes()
 })
 
-subCheckboxes.forEach((checkbox) => {
-    checkbox.addEventListener('change', () => {
-        const allChecked = Array.from(subCheckboxes).every((cb) => cb.checked)
-        groupCheckbox.checked = allChecked
-    })
+observer.observe(subCheckboxesContainer, {
+    childList: true, // Наблюдать за добавлением и удалением дочерних узлов
 })
+
+function updateSubCheckboxes() {
+    const subCheckboxes = document.querySelectorAll(
+        '#user .sub-checkboxes input[type="checkbox"]'
+    )
+
+    groupCheckbox.addEventListener('change', () => {
+        subCheckboxes.forEach((checkbox) => {
+            checkbox.checked = groupCheckbox.checked
+        })
+    })
+
+    subCheckboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+            const allChecked = Array.from(subCheckboxes).every(
+                (cb) => cb.checked
+            )
+            groupCheckbox.checked = allChecked
+        })
+    })
+}
+
+// Вызываем updateSubCheckboxes для уже имеющихся чекбоксов
+updateSubCheckboxes()
 
 toggleButton.addEventListener('click', () => {
     if (subCheckboxesContainer.style.display === 'none') {
@@ -42,9 +58,10 @@ toggleButton.addEventListener('click', () => {
     }
 })
 
-// Добавляем DOMContentLoaded, чтобы код выполнялся после загрузки страницы
+// Вызываем updateSubCheckboxes, чтобы учесть уже имеющиеся чекбоксы
+updateSubCheckboxes()
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Получаем ссылки на элементы, которые мы будем использовать
     const addButton = document.getElementById('add-button')
     const inputField = document.getElementById('input-field')
     const subCheckboxesUser = document.querySelector('#user .sub-checkboxes')
@@ -63,19 +80,20 @@ document.addEventListener('DOMContentLoaded', () => {
         // Для блока "user"
         const divUser = document.createElement('div')
         divUser.innerHTML = `
-            <input type="checkbox" id="${id}" name="breed" value="${label}">
-            <label for="${id}">${label}</label>
-        `
+        <input type="checkbox" id="breed-${id}" name="breed" value="${label}">
+        <label for="breed-${id}">${label}</label>
+    `
         subCheckboxesUser.appendChild(divUser)
 
         // Для блока "admin"
         const divAdmin = document.createElement('div')
         divAdmin.innerHTML = `
-            <label id="${id}">${label}</label>
-            <button class="delete-button" data-id="${id}">Удалить</button>
-        `
+        <label id="breed-${id}">${label}</label>
+        <button class="delete-button" data-id="${id}">Удалить</button>
+    `
         subCheckboxesAdmin.appendChild(divAdmin)
     }
+
     function updateLocalStorage(subElementsData) {
         localStorage.setItem('subElements', JSON.stringify(subElementsData))
     }
@@ -101,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const id = event.target.dataset.id
             div.remove()
             const adminDiv = subCheckboxesAdmin.querySelector(
-                `div label[id="${id}"]`
+                `div label[id="breed-${id}"]`
             ).parentNode
             adminDiv.remove()
             const subElementsData = JSON.parse(
