@@ -20,26 +20,68 @@
             </div>
             <div id="user" class="user-content">
                 <div class="checkbox-group" data-group-name="Порода">
-                    <input type="checkbox" id="group-breed" class="group-checkbox" />
-                    <label for="group-breed">Собачки</label>
-                    <button class="toggle-button">Раскрыть список</button> 
-                    <div class="sub-checkboxes" style="display: none;">
-                        <input type="checkbox" id="breed-1" name="breed" value="овчарка" />
-                        <label for="breed-1">Овчарка</label>
-                        <input type="checkbox" id="breed-2" name="breed" value="бульдог" />
-                        <label for="breed-2">Бульдог</label>
+                    <div class="main-checkboxes">
+                        <input
+                            type="checkbox"
+                            id="group-breed"
+                            class="group-checkbox"
+                        />
+                        <label for="group-breed">Собачки</label>
+                        <button class="toggle-button">Раскрыть список</button>
+                    </div>
+                    <div class="sub-checkboxes" style="display: none">
+                        <div>
+                            <input
+                                type="checkbox"
+                                id="breed-1"
+                                name="breed"
+                                value="овчарка"
+                            />
+                            <label for="breed-1">Овчарка</label>
+                        </div>
+                        <div>
+                            <input
+                                type="checkbox"
+                                id="breed-2"
+                                name="breed"
+                                value="бульдог"
+                            />
+                            <label for="breed-2">Бульдог</label>
+                        </div>
                     </div>
                 </div>
             </div>
             <div id="admin" style="display: none">
                 <div class="admin-content">
-                    Здесь будет контент для администраторов
-                </div>
-            </div>
-        </div>
-            <div id="admin" style="display: none">
-                <div class="admin-content">
-                    Здесь будет контент для администраторов
+                    <div class="checkbox-group" data-group-name="Порода">
+                        <div class="main-checkboxes">
+                            <label for="group-breed">Собачки</label>
+                        </div>
+                        <div class="sub-checkboxes">
+                            <div>
+                                <label id="breed-1" for="breed-1"
+                                    >Овчарка</label
+                                >
+                                <button class="delete-button">Удалить</button>
+                            </div>
+                            <div>
+                                <label id="breed-2">Бульдог</label>
+                                <button for="breed-2" class="delete-button">
+                                    Удалить
+                                </button>
+                            </div>
+                        </div>
+                        <div style="align-items: end">
+                            <input
+                                type="text"
+                                id="input-field"
+                                placeholder="Введите текст сабэлемента"
+                            />
+                            <button id="add-button" class="add-button">
+                                Добавить сабэлемент
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
