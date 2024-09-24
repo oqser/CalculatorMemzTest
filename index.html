@@ -1,71 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Тестовый тест</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/calc.css" />
-    <link rel="stylesheet" href="/css/checkbox.css" />
-  </head>
-  <body>
-    <div class="header">
-      <ul>
-        <li><a href="index.html">Калькулятор</a></li>
-        <li><a href="chckbox.html">Чекбоксы</a></li>
-      </ul>
-    </div>
-
-    <div class="container">
-      <div id="calculator-content">
-        <div class="left-column">
-          <h1>Калькулятор корма для собаки</h1>
-          <h4>Для расчёта - заполните форму:</h4>
+    <head>
+        <title>Тестовый тест</title>
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/header.css" />
+        <link rel="stylesheet" href="/css/calc.css" />
+        <link rel="stylesheet" href="/css/checkbox.css" />
+    </head>
+    <body>
+        <div class="header">
+            <ul>
+                <li>
+                    <a href="index.html">Калькулятор</a>
+                </li>
+                <li><a href="checkbox.html">Чекбоксы</a></li>
+            </ul>
         </div>
+        <div id="calculator-content">
+            <div class="left-column">
+                <h1>Калькулятор корма для собаки</h1>
+                <h4>Для расчёта - заполните форму:</h4>
+            </div>
+            <div class="right-column">
+                <label for="breed">Порода:</label>
+                <select id="breed">
+                    <option value="овчарка">Овчарка</option>
+                    <option value="лабрадор">Лабрадор</option>
+                </select>
+                <br />
+                <label for="age">Возраст (в годах):</label>
+                <select id="age">
+                    <option value="меньше1">Меньше 1</option>
+                    <option value="1-5">1-5</option>
+                    <option value="больше5">Больше 5</option>
+                </select>
+                <br />
+                <label for="activity">Активность:</label>
 
-        <div class="right-column">
-          <label for="breed">Порода:</label>
-          <select id="breed">
-            <option value="овчарка">Овчарка</option>
-            <option value="лабрадор">Лабрадор</option>
-          </select>
-          <br />
-          <label for="age">Возраст (в годах):</label>
-          <select id="age">
-            <option value="меньше1">Меньше 1</option>
-            <option value="1-5">1-5</option>
-            <option value="больше5">Больше 5</option>
-          </select>
-          <br />
-          <label for="activity">Активность:</label>
-
-          <div class="radio-container">
-            <input
-              type="radio"
-              id="умеренный"
-              name="activity"
-              value="умеренный"
-              checked
-            />
-            <label for="умеренный" class="calc-label">Умеренный</label>
-            <input
-              type="radio"
-              id="активный"
-              name="activity"
-              value="активный"
-            />
-            <label for="активный" class="calc-label">Активный</label>
-          </div>
-          <br />
-          <label for="weight">Вес (в кг):</label>
-          <input type="number" id="weight" min="0" max="30" />
-          <br />
-          <button onclick="calculateFood()">Рассчитать</button>
-          <p id="result"></p>
+                <div class="radio-container">
+                    <input
+                        type="radio"
+                        id="умеренный"
+                        name="activity"
+                        value="умеренный"
+                        checked
+                    />
+                    <label for="умеренный" class="calc-label">Умеренный</label>
+                    <input
+                        type="radio"
+                        id="активный"
+                        name="activity"
+                        value="активный"
+                    />
+                    <label for="активный" class="calc-label">Активный</label>
+                </div>
+                <br />
+                <label for="weight">Вес (в кг):</label>
+                <input type="number" id="weight" min="0" max="30" />
+                <br />
+                <button onclick="calculateFood()">Рассчитать</button>
+                <p id="result"></p>
+            </div>
         </div>
-      </div>
-    </div>
-    <script src="tabs.js"></script>
-    <script src="calc.js"></script>
-    <script src="checkbox.js"></script>
-  </body>
+        <script src="tabs.js"></script>
+        <script src="calc.js"></script>
+        <script src="checkbox.js"></script>
+    </body>
 </html>

@@ -1,31 +1,32 @@
 .header {
-  background-color: #7e4483;
-  color: white;
-  display: flex;
-  justify-content: space-around;
-  position: fixed;
-  top: 0;
-  width: 100%;
+    background-color: #7e4483;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 .header ul {
-  display: flex;
+    display: flex;
 }
 
 .header li {
-  display: flex;
-  padding: 10px;
+    display: flex;
+    padding: 10px;
 }
 
 .header a {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 
 .header a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .header ul {
-  padding-left: 0px;
+    padding-left: 0px;
 }

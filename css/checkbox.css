@@ -1,79 +1,74 @@
+.switch-container {
+    display: flex; /* Располагаем элементы в ряд */
+    align-items: center; /* Выравниваем элементы по вертикали */
+}
+
+.switch {
+    appearance: none; /* Скрываем стандартный внешний вид свитча */
+    width: 40px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #ccc; /* Цвет фона свитча */
+    position: relative;
+    cursor: pointer;
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white; /* Цвет ползунка */
+    transition: left 0.2s; /* Анимация переключения */
+}
+
+.switch:checked::before {
+    left: 25px; /* Перемещаем ползунок вправо при включении свитча */
+}
+
+.switch-label {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
 .checkbox-group {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-.checkbox-group:last-child {
-  border-bottom: none;
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-.checkbox-group input[type='checkbox'] {
-  margin-right: 10px;
+.checkbox-group label {
+    margin-left: 10px; /* Отступ слева от чекбокса */
 }
 
-.checkbox-group .action {
-  cursor: pointer;
+.toggle-button {
+    background-color: #4caf50; /* Зеленый цвет фона */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px; /* Отступ слева от метки */
 }
 
-.admin-switch {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
+.sub-checkboxes {
+    margin-left: 20px;
+    display: none;
 }
 
-.admin-switch input[type='checkbox'] {
-  display: none;
-}
-
-.admin-switch label {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 25px;
-  background-color: #ccc;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.admin-switch label::before {
-  content: '';
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 15px;
-  height: 15px;
-  background-color: white;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-
-.admin-switch input[type='checkbox']:checked + label::before {
-  transform: translateX(25px);
-}
-
-.progress-bar {
-  background-color: #ccc;
-  height: 10px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  background-color: #7e4483;
-  height: 100%;
-  width: 100%;
-  transition: width 0.3s ease;
-}
-
-.progress-bar p {
-  text-align: center;
-  margin: 0;
-  font-size: 12px;
-  line-height: 10px;
-  position: relative;
-  top: -15px;
+.checkbox-group .group-checkbox:checked ~ .sub-checkboxes {
+    display: block; /* Отображаем вложенные элементы, если родительский чекбокс выбран */
 }

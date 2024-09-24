@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Чекбоксы</title>
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/header.css" />
+        <link rel="stylesheet" href="/css/checkbox.css" />
+    </head>
+    <body>
+        <div class="header">
+            <ul>
+                <li><a href="index.html">Калькулятор</a></li>
+                <li><a href="checkbox.html">Чекбоксы</a></li>
+            </ul>
+        </div>
+        <div id="checkbox-content">
+            <div class="switch-container">
+                <input type="checkbox" id="admin-switch" class="switch" />
+                <label for="admin-switch" class="switch-label">Admin</label>
+            </div>
+            <div id="user" class="user-content">
+                <div class="checkbox-group" data-group-name="Порода">
+                    <input type="checkbox" id="group-breed" class="group-checkbox" />
+                    <label for="group-breed">Собачки</label>
+                    <button class="toggle-button">Раскрыть список</button> 
+                    <div class="sub-checkboxes" style="display: none;">
+                        <input type="checkbox" id="breed-1" name="breed" value="овчарка" />
+                        <label for="breed-1">Овчарка</label>
+                        <input type="checkbox" id="breed-2" name="breed" value="бульдог" />
+                        <label for="breed-2">Бульдог</label>
+                    </div>
+                </div>
+            </div>
+            <div id="admin" style="display: none">
+                <div class="admin-content">
+                    Здесь будет контент для администраторов
+                </div>
+            </div>
+        </div>
+            <div id="admin" style="display: none">
+                <div class="admin-content">
+                    Здесь будет контент для администраторов
+                </div>
+            </div>
+        </div>
+        <script src="checkbox.js"></script>
+    </body>
+</html>
