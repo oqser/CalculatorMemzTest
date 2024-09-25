@@ -1,90 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Чекбоксы</title>
-        <link rel="stylesheet" href="/css/style.css" />
-        <link rel="stylesheet" href="/css/header.css" />
-        <link rel="stylesheet" href="/css/checkbox.css" />
-    </head>
-    <body>
-        <div class="header">
-            <ul>
-                <li><a href="index.html">Калькулятор</a></li>
-                <li><a href="checkbox.html">Чекбоксы</a></li>
-            </ul>
+  <head>
+    <title>Чекбоксы</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/checkbox.css" />
+  </head>
+  <body>
+    <div class="header">
+      <ul>
+        <li><a href="index.html">Калькулятор</a></li>
+        <li><a href="checkbox.html">Чекбоксы</a></li>
+      </ul>
+    </div>
+    <div id="checkbox-content">
+      <div class="switch-container">
+        <input type="checkbox" id="admin-switch" class="switch" />
+        <label for="admin-switch" class="switch-label">Admin</label>
+      </div>
+      <div id="user" class="user-content">
+        <div class="checkbox-group" data-group-name="Порода">
+          <div class="main-checkboxes">
+            <input type="checkbox" id="group-prepare" class="group-checkbox" />
+            <label for="group-prepare">Подготовительные работы</label>
+            <button class="toggle-button">Раскрыть список</button>
+          </div>
+          <div class="sub-checkboxes" style="display: none">
+            <!-- Контент для пользователя -->
+          </div>
         </div>
-        <div id="checkbox-content">
-            <div class="switch-container">
-                <input type="checkbox" id="admin-switch" class="switch" />
-                <label for="admin-switch" class="switch-label">Admin</label>
+      </div>
+      <div id="admin" style="display: none">
+        <div class="admin-content">
+          <div class="checkbox-group" data-group-name="Порода">
+            <div class="main-checkboxes">
+              <label for="group-prepare">Подготовительные работы</label>
             </div>
-            <div id="user" class="user-content">
-                <div class="checkbox-group" data-group-name="Порода">
-                    <div class="main-checkboxes">
-                        <input
-                            type="checkbox"
-                            id="group-breed"
-                            class="group-checkbox"
-                        />
-                        <label for="group-breed">Собачки</label>
-                        <button class="toggle-button">Раскрыть список</button>
-                    </div>
-                    <div class="sub-checkboxes" style="display: none">
-                        <div>
-                            <input
-                                type="checkbox"
-                                id="breed-1"
-                                name="breed"
-                                value="овчарка"
-                            />
-                            <label for="breed-1">Овчарка</label>
-                        </div>
-                        <div>
-                            <input
-                                type="checkbox"
-                                id="breed-2"
-                                name="breed"
-                                value="бульдог"
-                            />
-                            <label for="breed-2">Бульдог</label>
-                        </div>
-                    </div>
-                </div>
+            <div class="sub-checkboxes">
+              <!-- Контент для администратора -->
             </div>
-            <div id="admin" style="display: none">
-                <div class="admin-content">
-                    <div class="checkbox-group" data-group-name="Порода">
-                        <div class="main-checkboxes">
-                            <label for="group-breed">Собачки</label>
-                        </div>
-                        <div class="sub-checkboxes">
-                            <div>
-                                <label id="breed-1" for="breed-1"
-                                    >Овчарка</label
-                                >
-                                <button class="delete-button">Удалить</button>
-                            </div>
-                            <div>
-                                <label id="breed-2">Бульдог</label>
-                                <button for="breed-2" class="delete-button">
-                                    Удалить
-                                </button>
-                            </div>
-                        </div>
-                        <div style="align-items: end">
-                            <input
-                                type="text"
-                                id="input-field"
-                                placeholder="Введите текст сабэлемента"
-                            />
-                            <button id="add-button" class="add-button">
-                                Добавить сабэлемент
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <div style="align-items: end">
+              <input
+                type="text"
+                id="input-field"
+                placeholder="Введите название"
+              />
+              <button id="add-button" class="add-button">
+                Добавить сабэлемент
+              </button>
             </div>
+          </div>
         </div>
-        <script src="checkbox.js"></script>
-    </body>
+      </div>
+    </div>
+    <script src="checkbox.js"></script>
+  </body>
 </html>
