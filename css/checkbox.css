@@ -1,121 +1,143 @@
 #checkbox-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1%;
 }
 
 .switch-container {
-  display: flex;
-  align-items: center;
-  padding-bottom: 1%;
+    display: flex;
+    align-items: center;
+    padding-bottom: 1%;
 }
 
 .switch {
-  appearance: none; /* Скрываем стандартный внешний вид свитча */
-  width: 40px;
-  height: 20px;
-  border-radius: 20px;
-  background-color: #ccc; /* Цвет фона свитча */
-  position: relative;
-  cursor: pointer;
+    appearance: none; /* Скрываем стандартный внешний вид свитча */
+    width: 40px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #ccc; /* Цвет фона свитча */
+    position: relative;
+    cursor: pointer;
 }
 
 .switch::before {
-  content: '';
-  position: absolute;
-  left: 5px;
-  top: 5px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: white; /* Цвет ползунка */
-  transition: left 0.5s; /* Анимация переключения */
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white; /* Цвет ползунка */
+    transition: left 0.5s; /* Анимация переключения */
 }
 
 .switch:checked::before {
-  left: 25px;
+    left: 25px;
 }
 
 .switch-label {
-  margin-left: 10px;
-  cursor: pointer;
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 .checkbox-group {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  flex-direction: column;
-  padding: 10px;
-  gap: 5px;
-  width: 40em;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+    width: 40em;
 }
 
 .main-checkboxes {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  width: 100%;
-  background-color: rgba(126, 68, 131, 0.4);
-  border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    background-color: rgba(126, 68, 131, 0.4);
+    border-radius: 10px;
 }
 
 .sub-checkboxes {
-  width: 90%;
-  background-color: rgba(126, 68, 131, 0.3);
-  border-radius: 10px;
-  padding: 10px;
-  margin-left: 65px;
+    width: 90%;
+    background-color: rgba(126, 68, 131, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 65px;
 }
 
 .checkbox-group label {
-  margin-left: 5px;
+    margin-left: 5px;
 }
 
 .toggle-button {
-  background-color: rgba(126, 68, 131);
-  border: none;
-  color: white;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-left: auto;
+    background-color: rgba(126, 68, 131);
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: auto;
 }
 
 .checkbox-group .group-checkbox:checked ~ .sub-checkboxes {
-  display: block;
+    display: block;
+}
+
+.sub-checkboxes div {
+    /* Или другой селектор, который подходит для контейнера сабэлементов */
+    display: flex;
+    align-items: center;
+    padding: 5px; /* Выравнивание по вертикали, чтобы кнопка была по центру */
+    border-bottom: 1px solid #4b3e3e;
 }
 
 .delete-button {
-  background-color: rgba(126, 68, 131);
-  border: none;
-  color: white;
-  padding: 4px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-left: auto;
+    background-color: rgba(126, 68, 131);
+    border: none;
+    color: white;
+    padding: 4px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.save-button {
+    background-color: rgb(33, 167, 172);
+    border: none;
+    color: white;
+    padding: 4px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 5px;
 }
 
 .add-button {
-  background-color: rgba(126, 68, 131);
-  border: none;
-  color: white;
-  padding: 4px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-left: auto;
+    background-color: rgba(126, 68, 131);
+    border: none;
+    color: white;
+    padding: 4px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: auto;
 }

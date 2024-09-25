@@ -5,6 +5,11 @@ function calculateFood() {
         'input[name="activity"]:checked'
     ).value
     const weight = parseInt(document.getElementById('weight').value)
+    if (weight < 0 || weight > 30) {
+        alert('Введите значение от 0 до 30 кг')
+        document.getElementById('weight').value = ''
+        return
+    }
 
     let foodAmount = 0
 

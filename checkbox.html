@@ -1,58 +1,160 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Чекбоксы</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/checkbox.css" />
-  </head>
-  <body>
-    <div class="header">
-      <ul>
-        <li><a href="index.html">Калькулятор</a></li>
-        <li><a href="checkbox.html">Чекбоксы</a></li>
-      </ul>
-    </div>
-    <div id="checkbox-content">
-      <div class="switch-container">
-        <input type="checkbox" id="admin-switch" class="switch" />
-        <label for="admin-switch" class="switch-label">Admin</label>
-      </div>
-      <div id="user" class="user-content">
-        <div class="checkbox-group" data-group-name="Порода">
-          <div class="main-checkboxes">
-            <input type="checkbox" id="group-prepare" class="group-checkbox" />
-            <label for="group-prepare">Подготовительные работы</label>
-            <button class="toggle-button">Раскрыть список</button>
-          </div>
-          <div class="sub-checkboxes" style="display: none">
-            <!-- Контент для пользователя -->
-          </div>
+    <head>
+        <title>Чекбоксы</title>
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/header.css" />
+        <link rel="stylesheet" href="/css/checkbox.css" />
+    </head>
+    <body>
+        <div class="header">
+            <ul>
+                <li><a href="index.html">Калькулятор</a></li>
+                <li><a href="checkbox.html">Чекбоксы</a></li>
+            </ul>
         </div>
-      </div>
-      <div id="admin" style="display: none">
-        <div class="admin-content">
-          <div class="checkbox-group" data-group-name="Порода">
-            <div class="main-checkboxes">
-              <label for="group-prepare">Подготовительные работы</label>
+        <div id="checkbox-content">
+            <div class="switch-container">
+                <input type="checkbox" id="admin-switch" class="switch" />
+                <label for="admin-switch" class="switch-label">Admin</label>
             </div>
-            <div class="sub-checkboxes">
-              <!-- Контент для администратора -->
+            <div id="user" class="user-content">
+                <div class="checkbox-group" data-group-name="Подготовительные">
+                    <div class="main-checkboxes">
+                        <input
+                            type="checkbox"
+                            id="group-prepare"
+                            class="group-checkbox"
+                        />
+                        <label for="group-prepare"
+                            >Подготовительные работы</label
+                        >
+                        <button class="toggle-button">Раскрыть список</button>
+                    </div>
+                    <div class="sub-checkboxes" style="display: none">
+                        <!-- Контент для пользователя -->
+                    </div>
+                </div>
+                <div class="checkbox-group" data-group-name="SEO">
+                    <div class="main-checkboxes">
+                        <input
+                            type="checkbox"
+                            id="group-seo"
+                            class="group-checkbox"
+                        />
+                        <label for="group-seo">SEO</label>
+                        <button class="toggle-button" id="toggleButtonUser-seo">
+                            Раскрыть список
+                        </button>
+                    </div>
+                    <div
+                        class="sub-checkboxes"
+                        id="subCheckboxesContainerUser-seo"
+                        style="display: none"
+                    >
+                        <!-- Контент для SEO -->
+                    </div>
+                </div>
+                <div class="checkbox-group" data-group-name="Стратегия">
+                    <div class="main-checkboxes">
+                        <input
+                            type="checkbox"
+                            id="group-strategy"
+                            class="group-checkbox"
+                        />
+                        <label for="group-strategy">Стратегия</label>
+                        <button
+                            class="toggle-button"
+                            id="toggleButtonUser-strategy"
+                        >
+                            Раскрыть список
+                        </button>
+                    </div>
+                    <div
+                        class="sub-checkboxes"
+                        id="subCheckboxesContainerUser-strategy"
+                        style="display: none"
+                    >
+                        <!-- Контент для Стратегия -->
+                    </div>
+                </div>
             </div>
-            <div style="align-items: end">
-              <input
-                type="text"
-                id="input-field"
-                placeholder="Введите название"
-              />
-              <button id="add-button" class="add-button">
-                Добавить сабэлемент
-              </button>
+            <div id="admin" style="display: none">
+                <div class="admin-content">
+                    <div
+                        class="checkbox-group"
+                        data-group-name="Подготовительные"
+                    >
+                        <div class="main-checkboxes">
+                            <label for="group-prepare">
+                                Подготовительные работы
+                            </label>
+                        </div>
+                        <div
+                            class="sub-checkboxes"
+                            id="subCheckboxesContainerAdmin-prepare"
+                            contenteditable="true"
+                        >
+                            <!-- Контент для администратора -->
+                        </div>
+                        <div style="align-items: end">
+                            <input
+                                type="text"
+                                id="input-field-prepare"
+                                placeholder="Введите название"
+                            />
+                            <button id="add-button-prepare" class="add-button">
+                                Добавить сабэлемент
+                            </button>
+                        </div>
+                    </div>
+                    <div class="checkbox-group" data-group-name="SEO">
+                        <div class="main-checkboxes">
+                            <label for="group-seo">SEO</label>
+                        </div>
+                        <div
+                            class="sub-checkboxes"
+                            id="subCheckboxesContainerAdmin-seo"
+                            contenteditable="true"
+                        >
+                            <!-- Контент для администратора -->
+                        </div>
+                        <div style="align-items: end">
+                            <input
+                                type="text"
+                                id="input-field-seo"
+                                placeholder="Введите название"
+                            />
+                            <button id="add-button-seo" class="add-button">
+                                Добавить сабэлемент
+                            </button>
+                        </div>
+                    </div>
+                    <div class="checkbox-group" data-group-name="Стратегия">
+                        <div class="main-checkboxes">
+                            <label for="group-strategy">Стратегия</label>
+                        </div>
+                        <div
+                            class="sub-checkboxes"
+                            id="subCheckboxesContainerAdmin-strategy"
+                            contenteditable="true"
+                        >
+                            <!-- Контент для администратора -->
+                        </div>
+                        <div style="align-items: end">
+                            <input
+                                type="text"
+                                id="input-field-strategy"
+                                placeholder="Введите название"
+                            />
+                            <button id="add-button-strategy" class="add-button">
+                                Добавить сабэлемент
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <script src="checkbox.js"></script>
-  </body>
+        <script src="checkbox.js"></script>
+    </body>
 </html>
